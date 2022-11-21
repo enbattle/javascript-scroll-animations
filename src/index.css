@@ -14,8 +14,15 @@ code {
     monospace;
 }
 
+/* General styling for the sections */
 .App {
   text-align: center;
+}
+
+.flex {
+  display: flex;
+  align-content: center;
+  place-items: center;
 }
 
 .center {
@@ -24,33 +31,117 @@ code {
   place-items: center;
 }
 
-.title {
+.full-height {
   min-height: 100vh;
 }
 
-.play {
-  min-height: 100vh;
+/* Opacity animation */
+.hidden-opacity-animation {
+  opacity: 0;
+  transition: all 2s;
 }
 
-.cool {
-  min-height: 100vh;
+.show-opacity-animation {
+  opacity: 1;
 }
 
-.hidden {
+/* Blur animation */
+.hidden-blur-animation {
+  transition: all 2s;
+  filter: blur(5px);
+}
+
+.show-blur-animation {
+  filter: blur(0);
+}
+
+/* Left transform animation */
+.hidden-left-transform-animation {
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show-left-transform-animation {
+  transform: translateX(0);
+}
+
+/* Right transform animation */
+.hidden-right-transform-animation {
+  transform: translateX(100%);
+  transition: all 2s;
+}
+
+.show-right-transform-animation {
+  transform: translateX(0);
+}
+
+/* Multiple animations */
+.hidden-multiple-transform-animation {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: all 1s;
+  transition: all 2s;
 }
 
-.show {
+.show-multiple-transform-animation {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
 }
 
+/* Delayed animation */
+.hidden-delay-transform-animation {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show-delay-transform-animation {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.delay:nth-child(2) {
+  transition-delay: 400ms;
+}
+
+.delay:nth-child(3) {
+  transition-delay: 800ms;
+}
+
+.delay:nth-child(4) {
+  transition-delay: 1200ms;
+}
+
 @media(prefers-reduced-motion) {
-  .hidden {
-    transition: none;
+  .hidden-opacity-animation {
+    opacity: 1;
+  }
+
+  .hidden-blur-animation {
+    filter: blur(0);
+  }
+
+  .hidden-left-transform-animation {
+    transform: translateX(0);
+  }
+
+  .hidden-right-transform-animation {
+    transform: translateX(0);
+  }
+
+  .hidden-multiple-transform-animation {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+
+  .hidden-delay-transform-animation {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
   }
 }

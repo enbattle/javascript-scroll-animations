@@ -16,19 +16,28 @@ code {
 
 /* General styling for the sections */
 .App {
+  font-size: 1.5rem;
   text-align: center;
+}
+
+.content {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flex {
   display: flex;
   align-content: center;
   place-items: center;
+  justify-content: center;
 }
 
 .center {
   display: grid;
   align-content: center;
   place-items: center;
+  justify-content: center;
 }
 
 .full-height {
@@ -94,7 +103,7 @@ code {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: all 2s;
+  transition: all 3s;
 }
 
 .show-delay-transform-animation {
@@ -115,6 +124,38 @@ code {
   transition-delay: 1200ms;
 }
 
+.delay:nth-child(5) {
+  transition-delay: 1600ms;
+}
+
+/* Typewriter animation */
+.hidden-typewriter-animation {
+  opacity: 0;
+}
+
+.show-typewriter-animation {
+  opacity: 1;
+  overflow: hidden;
+  border-right: .2rem solid greenyellow;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .2rem;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: greenyellow; }
+}
+
+/* If user prefers reduced motion, remove animations */
 @media(prefers-reduced-motion) {
   .hidden-opacity-animation {
     opacity: 1;
@@ -138,10 +179,14 @@ code {
     transform: translateX(0);
   }
   
-
   .hidden-delay-transform-animation {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+  }
+
+  .hidden-typewriter-animation,
+  .show-typewriter-animation {
+    opacity: 1;
   }
 }

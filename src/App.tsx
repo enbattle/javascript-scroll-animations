@@ -26,6 +26,9 @@ const App: Component = () => {
           if(entry.target.classList.contains("hidden-delay-transform-animation")) {
             entry.target.classList.add('show-delay-transform-animation');
           }
+          if(entry.target.classList.contains("hidden-typewriter-animation")) {
+            entry.target.classList.add('show-typewriter-animation');
+          }
         }
         else {
           if(entry.target.classList.contains("show-opacity-animation")) {
@@ -46,6 +49,9 @@ const App: Component = () => {
           if(entry.target.classList.contains("show-delay-transform-animation")) {
             entry.target.classList.remove('show-delay-transform-animation');
           }
+          if(entry.target.classList.contains("show-typewriter-animation")) {
+            entry.target.classList.remove('show-typewriter-animation');
+          }
         }
       });
     });
@@ -59,58 +65,62 @@ const App: Component = () => {
 
   return (
     <main class="App">
-      <div class="center full-height">
+      <div class="center full-height content">
         <h1>Hello, welcome!</h1>
-        <p>I am just here to play around with JavaScript Scroll Animations. &#128513;</p>
-        <p>(Please scroll down to see the different animations)</p>
+        <p>I am just here to play around with pure CSS/JavaScript Scroll Animations. 
+          Animations are played when you scroll to them, and hidden when you scroll away from them.
+          Please note that if your system minimizes amount of non-essential motion, you will not see the animations.
+          Otherwise, please have fun and enjoy! More complex animations to come in the future! &#128513;
+        </p>
+        <p>(Please scroll down to see the different animations!)</p>
       </div>
 
-      <div class="center full-height">
+      <div class="center full-height content">
         <p 
           ref={(element) => {
             if(element) animationRefs.push(element);
           }}
           class="hidden-opacity-animation"
-        >This is an opacity animation!</p>
+        >This is an opacity animation! &#128526;</p>
       </div>
 
-      <div class="center full-height">
+      <div class="center full-height content">
         <p 
           ref={(element) => {
             if(element) animationRefs.push(element);
           }}
           class="hidden-blur-animation"
-        >This is a text blur animation!</p>
+        >This is a text blur animation! &#128565;</p>
       </div>
 
-      <div class="center full-height">
+      <div class="center full-height content">
         <p
           ref={(element) => {
             if(element) animationRefs.push(element);
           }}
           class="hidden-left-transform-animation"
-        >This is left transform animation!</p>
+        >This is left transform animation! &#128073;</p>
       </div>
 
-      <div class="center full-height">
+      <div class="center full-height content">
         <p
           ref={(element) => {
             if(element) animationRefs.push(element);
           }}
           class="hidden-right-transform-animation"
-        >This is right transform animation!</p>
+        >This is right transform animation! &#128072;</p>
       </div>
 
-      <div class="center full-height">
+      <div class="center full-height content">
         <p
           ref={(element) => {
             if(element) animationRefs.push(element);
           }}
           class="hidden-multiple-transform-animation"
-        >This is adding many animations together!</p>
+        >Lets add opacity, blur, and left transform animations together! &#128079;</p>
       </div>
 
-      <div class="center full-height">
+      <div class="center full-height content">
         <span class="flex">
           <p
             ref={(element) => {
@@ -118,25 +128,40 @@ const App: Component = () => {
             }}
             class="delay hidden-delay-transform-animation"
           >Try&nbsp;</p>
-                    <p
+          <p
             ref={(element) => {
               if(element) animationRefs.push(element);
             }}
             class="delay hidden-delay-transform-animation"
           >delaying&nbsp;</p>
-                    <p
+          <p
             ref={(element) => {
               if(element) animationRefs.push(element);
             }}
             class="delay hidden-delay-transform-animation"
           >the&nbsp;</p>
-                    <p
+          <p
             ref={(element) => {
               if(element) animationRefs.push(element);
             }}
             class="delay hidden-delay-transform-animation"
-          >animations!</p>
+          >animations!&nbsp;</p>
+          <p
+            ref={(element) => {
+              if(element) animationRefs.push(element);
+            }}
+            class="delay hidden-delay-transform-animation"
+          >&#9200;</p>
         </span>
+      </div>
+
+      <div class="center full-height content">
+        <p
+          ref={(element) => {
+            if(element) animationRefs.push(element);
+          }}
+          class="hidden-typewriter-animation"
+        >Maybe a cool typewriter animation?</p>
       </div>
     </main>
   );
